@@ -1373,17 +1373,6 @@ footer {
   .form-card-header p { font-size: .68rem; display: none; }
   .form-body { padding: 10px 14px 14px; }
 
-  /* Progressive form: step 1 fields (ZIP + name) visible, rest collapsed */
-  .form-field.form-step-2 {
-    display: none;
-    animation: formExpand .3s ease forwards;
-  }
-  .form-field.form-step-2.active { display: flex; }
-  @keyframes formExpand {
-    from { opacity: 0; max-height: 0; margin-bottom: 0; transform: translateY(-4px); }
-    to   { opacity: 1; max-height: 60px; margin-bottom: 8px; transform: translateY(0); }
-  }
-
   .form-field {
     padding: 13px 12px;
     margin-bottom: 7px;
@@ -1395,9 +1384,6 @@ footer {
     margin: 4px 0 10px;
     line-height: 1.45;
   }
-  .form-consent.form-step-2 { display: none; }
-  .form-consent.form-step-2.active { display: flex; }
-
   .btn-form-cta {
     padding: 16px;
     font-size: 1.02rem;
@@ -1843,7 +1829,7 @@ footer {
               </div>
 
               <!-- COMPLIANCE: TCPA consent — this language MUST be reviewed by legal before launch -->
-              <div class="form-consent form-step-2">
+              <div class="form-consent">
                 <input type="checkbox" id="consent-hero">
                 <label for="consent-hero">By submitting this form, you agree to be contacted by phone, text, and email regarding home internet offers. Consent is not a condition of purchase. Terms, rates, taxes, fees, eligibility, and availability vary. <a href="https://unlimited5ghomeinternet.com/privacy-policy-is" target="_blank">Privacy Policy</a> &middot; <a href="https://unlimited5ghomeinternet.com/terms-of-services" target="_blank">Terms</a></label>
               </div>
@@ -2566,6 +2552,8 @@ function toggleFaq(btn) {
   // toggle clicked
   if (!wasOpen) item.classList.add('open');
 }
+
+const isMobile = () => window.innerWidth <= 640;
 
 function handleHeroForm() {
   const firstName = document.getElementById('lead-firstname')?.value?.trim();
