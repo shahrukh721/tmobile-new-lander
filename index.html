@@ -2583,6 +2583,7 @@ function handleHeroFormSubmit(event) {
   if (!phone)     { document.getElementById('lead-phone')?.focus();     return; }
   if (!zip)       { document.getElementById('lead-zip')?.focus();       return; }
 
+  try { sessionStorage.setItem('tmLead', JSON.stringify({ firstName, lastName, email, phone, zip })); } catch(e) {}
   submitToGHL({ firstName, lastName, email, phone, postal_code: zip, source: 'hero-form' })
     .finally(() => { window.location.href = 'thankyou-callin.html'; });
 }
@@ -2601,6 +2602,7 @@ function handleFooterFormSubmit(event) {
   if (!phone)     { document.getElementById('footer-phone')?.focus();     return; }
   if (!zip)       { document.getElementById('footer-zip')?.focus();       return; }
 
+  try { sessionStorage.setItem('tmLead', JSON.stringify({ firstName, lastName, email, phone, zip })); } catch(e) {}
   submitToGHL({ firstName, lastName, email, phone, postal_code: zip, source: 'footer-form' })
     .finally(() => { window.location.href = 'thankyou-callin.html'; });
 }
