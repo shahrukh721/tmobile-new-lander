@@ -1820,34 +1820,26 @@ footer {
             </div>
 
             <div class="form-body">
-              <!-- Progressive form: step indicator (mobile only) -->
-              <div class="form-progress" style="display:none;" id="formProgress">
-                <div class="form-progress-dot active" id="fpDot1"></div>
-                <div class="form-progress-dot" id="fpDot2"></div>
-              </div>
-
-              <!-- STEP 1: ZIP + Name (always visible) -->
+              <!-- Fields: First Name, Last Name, Email, Phone, ZIP -->
               <div class="form-field">
-                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-                <input type="text" id="lead-zip" placeholder="ZIP Code" maxlength="10" inputmode="numeric">
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <input type="text" id="lead-firstname" placeholder="First Name" autocomplete="given-name">
               </div>
               <div class="form-field">
                 <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                <input type="text" id="lead-name" placeholder="Full Name">
+                <input type="text" id="lead-lastname" placeholder="Last Name" autocomplete="family-name">
               </div>
-
-              <!-- STEP 2: Remaining fields (expand on mobile after "Continue") -->
-              <div class="form-field form-step-2">
+              <div class="form-field">
                 <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                <input type="email" id="lead-email" placeholder="Email Address">
+                <input type="email" id="lead-email" placeholder="Email Address" autocomplete="email">
               </div>
-              <div class="form-field form-step-2">
+              <div class="form-field">
                 <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.09 1.18 2 2 0 012.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-                <input type="tel" id="lead-phone" placeholder="Phone Number">
+                <input type="tel" id="lead-phone" placeholder="Phone Number" autocomplete="tel">
               </div>
-              <div class="form-field form-step-2">
-                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <input type="text" id="lead-address" placeholder="Street Address">
+              <div class="form-field">
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                <input type="text" id="lead-zip" placeholder="ZIP Code" maxlength="10" inputmode="numeric">
               </div>
 
               <!-- COMPLIANCE: TCPA consent — this language MUST be reviewed by legal before launch -->
@@ -2397,23 +2389,23 @@ footer {
         <div class="footer-cta-card-body">
           <div class="form-field">
             <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <input type="text" placeholder="Full Name">
+            <input type="text" id="footer-firstname" placeholder="First Name" autocomplete="given-name">
+          </div>
+          <div class="form-field">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <input type="text" id="footer-lastname" placeholder="Last Name" autocomplete="family-name">
           </div>
           <div class="form-field">
             <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <input type="email" placeholder="Email Address">
+            <input type="email" id="footer-email" placeholder="Email Address" autocomplete="email">
           </div>
           <div class="form-field">
             <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.09 1.18 2 2 0 012.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-            <input type="tel" placeholder="Phone Number">
-          </div>
-          <div class="form-field">
-            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <input type="text" placeholder="Street Address">
+            <input type="tel" id="footer-phone" placeholder="Phone Number" autocomplete="tel">
           </div>
           <div class="form-field">
             <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-            <input type="text" placeholder="ZIP Code" maxlength="10">
+            <input type="text" id="footer-zip" placeholder="ZIP Code" maxlength="10" inputmode="numeric">
           </div>
           <!-- COMPLIANCE: TCPA consent — must be reviewed before launch -->
           <div class="form-consent" style="margin-bottom:14px;">
@@ -2575,37 +2567,23 @@ function toggleFaq(btn) {
   if (!wasOpen) item.classList.add('open');
 }
 
-/* ——— PROGRESSIVE FORM (mobile) ——— */
-let formStep = 1;
-const isMobile = () => window.innerWidth <= 640;
-
 function handleHeroForm() {
-  if (isMobile() && formStep === 1) {
-    // Validate step 1
-    const zip = document.getElementById('lead-zip')?.value?.trim();
-    const name = document.getElementById('lead-name')?.value?.trim();
-    if (!zip) { document.getElementById('lead-zip')?.focus(); return; }
-    if (!name) { document.getElementById('lead-name')?.focus(); return; }
+  const firstName = document.getElementById('lead-firstname')?.value?.trim();
+  const lastName  = document.getElementById('lead-lastname')?.value?.trim();
+  const email     = document.getElementById('lead-email')?.value?.trim();
+  const phone     = document.getElementById('lead-phone')?.value?.trim();
+  const zip       = document.getElementById('lead-zip')?.value?.trim();
 
-    // Expand step 2
-    formStep = 2;
-    document.querySelectorAll('.form-step-2').forEach(el => el.classList.add('active'));
-    document.getElementById('fpDot2')?.classList.add('active');
-    document.getElementById('heroFormCta').textContent = 'Check Availability ›';
+  if (!firstName) { document.getElementById('lead-firstname')?.focus(); return; }
+  if (!lastName)  { document.getElementById('lead-lastname')?.focus();  return; }
+  if (!email)     { document.getElementById('lead-email')?.focus();     return; }
+  if (!phone)     { document.getElementById('lead-phone')?.focus();     return; }
+  if (!zip)       { document.getElementById('lead-zip')?.focus();       return; }
 
-    // Scroll form into nice view and focus first step-2 field
-    setTimeout(() => {
-      document.getElementById('lead-email')?.focus();
-    }, 350);
-    return;
-  }
-  // Step 2 or desktop: submit
+  // ── INSERT YOUR GHL WEBHOOK HERE ──
+  // fetch('YOUR_WEBHOOK_URL',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({firstName,lastName,email,phone,zip})})
+  //   .then(()=>window.location.href='thankyou-callin.html').catch(()=>window.location.href='thankyou-callin.html');
   goToQuiz();
-}
-
-// On desktop, show all fields immediately
-if (!isMobile()) {
-  document.querySelectorAll('.form-step-2').forEach(el => el.classList.add('active'));
 }
 
 /* ——— SMART STICKY CTA — hide when any form is in view ——— */
