@@ -1817,36 +1817,37 @@ footer {
               <p class="form-etf-sub">Plus up to <strong>$750</strong> in Early Termination Fees covered</p>
             </div>
 
-            <div class="form-body">
+            <form class="form-body" id="hero-ghl-form" method="POST" action="YOUR_GHL_WEBHOOK_URL" onsubmit="handleHeroFormSubmit(event)">
+              <input type="hidden" name="source" value="hero-form">
               <!-- Fields: First Name, Last Name, Email, Phone, ZIP -->
               <div class="form-field">
                 <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                <input type="text" id="lead-firstname" placeholder="First Name" autocomplete="given-name">
+                <input type="text" id="lead-firstname" name="firstName" placeholder="First Name" autocomplete="given-name" required>
               </div>
               <div class="form-field">
                 <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                <input type="text" id="lead-lastname" placeholder="Last Name" autocomplete="family-name">
+                <input type="text" id="lead-lastname" name="lastName" placeholder="Last Name" autocomplete="family-name" required>
               </div>
               <div class="form-field">
                 <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                <input type="email" id="lead-email" placeholder="Email Address" autocomplete="email">
+                <input type="email" id="lead-email" name="email" placeholder="Email Address" autocomplete="email" required>
               </div>
               <div class="form-field">
                 <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.09 1.18 2 2 0 012.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-                <input type="tel" id="lead-phone" placeholder="Phone Number" autocomplete="tel">
+                <input type="tel" id="lead-phone" name="phone" placeholder="Phone Number" autocomplete="tel" required>
               </div>
               <div class="form-field">
                 <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-                <input type="text" id="lead-zip" placeholder="ZIP Code" maxlength="10" inputmode="numeric">
+                <input type="text" id="lead-zip" name="postal_code" placeholder="ZIP Code" maxlength="10" inputmode="numeric" required>
               </div>
 
               <!-- COMPLIANCE: TCPA consent — this language MUST be reviewed by legal before launch -->
               <div class="form-consent">
-                <input type="checkbox" id="consent-hero">
+                <input type="checkbox" id="consent-hero" name="consent" value="yes">
                 <label for="consent-hero">By submitting this form, you agree to be contacted by phone, text, and email regarding home internet offers. Consent is not a condition of purchase. Terms, rates, taxes, fees, eligibility, and availability vary. <a href="https://unlimited5ghomeinternet.com/privacy-policy-is" target="_blank">Privacy Policy</a> &middot; <a href="https://unlimited5ghomeinternet.com/terms-of-services" target="_blank">Terms</a></label>
               </div>
 
-              <button class="btn-form-cta" id="heroFormCta" onclick="handleHeroForm()">Check Availability &rsaquo;</button>
+              <button type="submit" class="btn-form-cta" id="heroFormCta">Check Availability &rsaquo;</button>
 
               <!-- Post-CTA trust strip: 15 Day Trial | Easy Setup | Instant Approval -->
               <div class="form-post-cta-badges">
@@ -1868,7 +1869,7 @@ footer {
 
               <!-- Microcopy: visible on mobile -->
               <div class="form-micro" style="display:none;">Availability varies by address</div>
-            </div>
+            </form>
 
             <div class="form-card-trust">
               <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
@@ -2385,35 +2386,38 @@ footer {
           Check Availability
         </div>
         <div class="footer-cta-card-body">
-          <div class="form-field">
-            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <input type="text" id="footer-firstname" placeholder="First Name" autocomplete="given-name">
-          </div>
-          <div class="form-field">
-            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <input type="text" id="footer-lastname" placeholder="Last Name" autocomplete="family-name">
-          </div>
-          <div class="form-field">
-            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <input type="email" id="footer-email" placeholder="Email Address" autocomplete="email">
-          </div>
-          <div class="form-field">
-            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.09 1.18 2 2 0 012.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-            <input type="tel" id="footer-phone" placeholder="Phone Number" autocomplete="tel">
-          </div>
-          <div class="form-field">
-            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-            <input type="text" id="footer-zip" placeholder="ZIP Code" maxlength="10" inputmode="numeric">
-          </div>
-          <!-- COMPLIANCE: TCPA consent — must be reviewed before launch -->
-          <div class="form-consent" style="margin-bottom:14px;">
-            <input type="checkbox" id="consent-footer">
-            <label for="consent-footer">By submitting, you agree to be contacted regarding home internet offers. Consent is not required for purchase. <a href="https://unlimited5ghomeinternet.com/privacy-policy-is" target="_blank">Privacy</a> &middot; <a href="https://unlimited5ghomeinternet.com/terms-of-services" target="_blank">Terms</a></label>
-          </div>
-          <button class="btn-form-cta" onclick="goToQuiz()">Check Availability &rsaquo;</button>
-          <div style="text-align:center; margin-top:10px; font-size:.73rem; color:var(--muted);">
-            🔒 Secure &middot; No obligation &middot; Address-based check
-          </div>
+          <form id="footer-ghl-form" method="POST" action="YOUR_GHL_WEBHOOK_URL" onsubmit="handleFooterFormSubmit(event)">
+            <input type="hidden" name="source" value="footer-form">
+            <div class="form-field">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <input type="text" id="footer-firstname" name="firstName" placeholder="First Name" autocomplete="given-name" required>
+            </div>
+            <div class="form-field">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <input type="text" id="footer-lastname" name="lastName" placeholder="Last Name" autocomplete="family-name" required>
+            </div>
+            <div class="form-field">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <input type="email" id="footer-email" name="email" placeholder="Email Address" autocomplete="email" required>
+            </div>
+            <div class="form-field">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.09 1.18 2 2 0 012.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              <input type="tel" id="footer-phone" name="phone" placeholder="Phone Number" autocomplete="tel" required>
+            </div>
+            <div class="form-field">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+              <input type="text" id="footer-zip" name="postal_code" placeholder="ZIP Code" maxlength="10" inputmode="numeric" required>
+            </div>
+            <!-- COMPLIANCE: TCPA consent — must be reviewed before launch -->
+            <div class="form-consent" style="margin-bottom:14px;">
+              <input type="checkbox" id="consent-footer" name="consent" value="yes">
+              <label for="consent-footer">By submitting, you agree to be contacted regarding home internet offers. Consent is not required for purchase. <a href="https://unlimited5ghomeinternet.com/privacy-policy-is" target="_blank">Privacy</a> &middot; <a href="https://unlimited5ghomeinternet.com/terms-of-services" target="_blank">Terms</a></label>
+            </div>
+            <button type="submit" class="btn-form-cta">Check Availability &rsaquo;</button>
+            <div style="text-align:center; margin-top:10px; font-size:.73rem; color:var(--muted);">
+              🔒 Secure &middot; No obligation &middot; Address-based check
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -2554,7 +2558,19 @@ function toggleFaq(btn) {
 
 const isMobile = () => window.innerWidth <= 640;
 
-function handleHeroForm() {
+/* ── GHL WEBHOOK URL — replace before going live ── */
+const GHL_WEBHOOK_URL = 'YOUR_GHL_WEBHOOK_URL';
+
+function submitToGHL(data) {
+  return fetch(GHL_WEBHOOK_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).catch(() => {});  // always redirect even if fetch fails
+}
+
+function handleHeroFormSubmit(event) {
+  event.preventDefault();
   const firstName = document.getElementById('lead-firstname')?.value?.trim();
   const lastName  = document.getElementById('lead-lastname')?.value?.trim();
   const email     = document.getElementById('lead-email')?.value?.trim();
@@ -2567,10 +2583,26 @@ function handleHeroForm() {
   if (!phone)     { document.getElementById('lead-phone')?.focus();     return; }
   if (!zip)       { document.getElementById('lead-zip')?.focus();       return; }
 
-  // ── INSERT YOUR GHL WEBHOOK HERE ──
-  // fetch('YOUR_WEBHOOK_URL',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({firstName,lastName,email,phone,zip})})
-  //   .then(()=>window.location.href='thankyou-callin.html').catch(()=>window.location.href='thankyou-callin.html');
-  goToQuiz();
+  submitToGHL({ firstName, lastName, email, phone, postal_code: zip, source: 'hero-form' })
+    .finally(() => { window.location.href = 'thankyou-callin.html'; });
+}
+
+function handleFooterFormSubmit(event) {
+  event.preventDefault();
+  const firstName = document.getElementById('footer-firstname')?.value?.trim();
+  const lastName  = document.getElementById('footer-lastname')?.value?.trim();
+  const email     = document.getElementById('footer-email')?.value?.trim();
+  const phone     = document.getElementById('footer-phone')?.value?.trim();
+  const zip       = document.getElementById('footer-zip')?.value?.trim();
+
+  if (!firstName) { document.getElementById('footer-firstname')?.focus(); return; }
+  if (!lastName)  { document.getElementById('footer-lastname')?.focus();  return; }
+  if (!email)     { document.getElementById('footer-email')?.focus();     return; }
+  if (!phone)     { document.getElementById('footer-phone')?.focus();     return; }
+  if (!zip)       { document.getElementById('footer-zip')?.focus();       return; }
+
+  submitToGHL({ firstName, lastName, email, phone, postal_code: zip, source: 'footer-form' })
+    .finally(() => { window.location.href = 'thankyou-callin.html'; });
 }
 
 /* ——— SMART STICKY CTA — hide when any form is in view ——— */
@@ -2617,12 +2649,15 @@ function scrollToForm() {
 }
 
 function goToQuiz() {
-  // ── INSERT YOUR GHL WEBHOOK HERE ──
-  // fetch('YOUR_WEBHOOK_URL',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(collectFormData())})
-  //   .then(()=>window.location.href='thankyou-callin.html').catch(()=>window.location.href='thankyou-callin.html');
   window.location.href = 'thankyou-callin.html';
 }
 </script>
+
+<!-- LeadStacker External Tracking -->
+<script
+  src="https://link.leadstacker.com/js/external-tracking.js"
+  data-tracking-id="tk_d86a7b4d23f64a34b40324aef96e3bff"
+></script>
 
 </body>
 </html>
